@@ -1,0 +1,748 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+$bgColor: #131516;
+$white: #f1f1f1;
+$black: #121212;
+
+$etg: hsl(47, 90%, 76%);
+$etgBlue: rgb(102, 169, 214);
+
+$etgBlueGradient: linear-gradient(500deg, $etgBlue, $white);
+
+$etgGradient: linear-gradient(500deg, $etg, hsl(47, 75%, 66%));
+
+$scrollbarThumb: $white;
+$scrollbarTrack: $black;
+
+$shirtYellow: hsl(47, 90%, 76%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: "Inconsolata", monospace;
+  scrollbar-color: $scrollbarThumb $scrollbarTrack;
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 0.4rem;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: $scrollbarTrack;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: $scrollbarThumb;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.151);
+  border-radius: 0.4rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: $bgColor;
+  box-shadow: inset 0 1rem 30rem -1rem rgba(245, 245, 245, 0.151);
+  position: relative;
+  top: 7.5vh;
+  overflow-x: hidden;
+}
+
+//////Navbar
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 7.5vh;
+  background: $black;
+  color: $white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-family: monospace;
+  // border-bottom: .1rem solid rgba(255, 255, 255, 0.137);
+}
+
+.etg {
+  font-style: italic;
+  font-size: 1.5rem;
+  width: 180px;
+  background-image: $etgBlueGradient !important;
+  background-clip: text;
+  color: transparent;
+  margin-left: 2rem;
+}
+
+.navLinks {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  height: 100%;
+  margin-right: 2rem;
+  background-color: $black;
+}
+
+.navLinks a {
+  padding: 0.8rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  background-color: $black;
+}
+
+.active {
+  color: $etg;
+  filter: brightness(1.1);
+}
+
+.inactive {
+  color: $white;
+  text-decoration: none;
+}
+
+.dropbtn {
+  color: $white;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdownContent {
+  width: 100%;
+  right: 0;
+  display: none;
+  position: absolute;
+  background-color: $black;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  max-height: 70vh;
+  scrollbar-color: $scrollbarThumb $scrollbarTrack;
+  scrollbar-width: thin;
+  border-radius: 1rem 0 0 1rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.11);
+}
+
+.dropdownContent::-webkit-scrollbar {
+  width: 0.2rem;
+  border-radius: 1rem;
+  background-color: $scrollbarTrack;
+}
+
+.dropdownContent::-webkit-scrollbar-thumb {
+  background: $scrollbarThumb;
+  border-radius: 1rem;
+}
+
+.dropdownContentLink {
+  text-decoration: none;
+  display: block;
+  font-weight: 700;
+}
+
+.inactive:hover {
+  background-image: $etgGradient;
+  color: $black;
+}
+
+.dropdownContent a:hover {
+  background-image: $etgGradient;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+.dropdownContentLink:hover {
+  color: $black;
+}
+
+.pagination {
+  height: 100%;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 230px;
+}
+
+.pagination p {
+  display: inline;
+}
+
+.paginationNumber {
+  background-color: $white;
+  color: $black;
+  border-radius: 50%;
+  margin-right: .5rem;
+}
+
+.pagination a {
+  border-radius: 1rem;
+  padding: 0.6rem;
+  color: $white;
+  transition: all 0.2s ease-in-out;
+}
+
+.pagination a:hover {
+  transform: scale(1.3);
+}
+
+/////////
+
+.Start {
+  position: fixed;
+  top: 0vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url("start-ufo.jpg");
+}
+
+.bigButton {
+  display: inline-block;
+  cursor: pointer;
+  max-width: 80vw;
+  padding: 2rem 4rem;
+  font-family: monospace;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(29, 29, 29);
+  border: 0.2rem solid $black;
+  border-radius: 1rem 0 1rem 1rem;
+  filter: brightness(1.1);
+  background-image: $etgGradient;
+  transition: all 0.2s ease-in-out;
+  box-shadow: -0.5rem 0.5rem rgb(29, 29, 29), 0 0 2rem 0.5rem $white;
+}
+
+.bigButton:hover {
+  box-shadow: -1rem 1rem rgb(29, 29, 29), 0 0 2rem 0.5rem $white;
+  filter: brightness(1.1);
+  transform: scale(1.01);
+}
+
+.startTourButton {
+  margin: 6vh auto;
+  box-shadow: -0.5rem 0.5rem $white, 0 0 30rem .01rem rgba(255, 255, 255, 0.493);
+}
+
+.startTourButton:hover {
+  box-shadow: -1rem 1rem $white;
+}
+
+/////////Rooms
+
+.Page-Title {
+  text-align: center;
+  padding-top: 6vh;
+  max-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.Page-Title h6 {
+  font-weight: 100;
+}
+
+.Page-Title p {
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  color: $white;
+  width: clamp(200px, 60%, 600px);
+  margin: 8vh auto 0;
+  line-height: 1.6rem;
+}
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(-360deg);
+  }
+}
+.Headline {
+  background-image: linear-gradient(500deg, $etg, $etgBlue);
+  background-clip: text;
+  color: $etg;
+  animation: hue 4s infinite linear;
+  text-shadow: 0px 0px 5rem rgba(255, 255, 255, 0.979);
+  font-family: monospace;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  font-size: 2rem;
+  margin: 2rem 12%;
+}
+
+.Room-Links-Container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 20vh;
+}
+
+@keyframes ship {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(1rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.Room-Link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.952);
+  font-size: 1.4rem;
+  margin: 10vh;
+  position: relative;
+  line-height: 1.6rem;
+  max-width: 300px;
+}
+
+.Room-Link p {
+  margin: 5px 0 0;
+}
+
+.ship0 {
+  animation: ship 2s ease-in-out infinite reverse;
+}
+.ship1 {
+  animation: ship 2s linear infinite normal;
+}
+.ship2 {
+  animation: ship 2s ease infinite reverse;
+}
+.ship3 {
+  animation: ship 2s ease-out infinite alternate;
+}
+.ship4 {
+  animation: ship 2s ease-in infinite alternate;
+}
+
+.Room-Link img {
+  height: auto;
+  width: 220px;
+  size: contain;
+  margin-bottom: -7vh;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Room-Link img:hover {
+  transform: scale(1.6) translateY(-2.3vh);
+  transition: transform 0.4s ease-out;
+}
+
+//stars background
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+@keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+.stars,
+.twinkling,
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stars {
+  background: #000 url("stars.png") repeat top center;
+  z-index: -5;
+}
+
+.twinkling {
+  background: transparent url("twinkling.png") repeat top center;
+  z-index: -4;
+  animation: move-twink-back 200s linear infinite;
+}
+
+.clouds {
+  background: transparent url("clouds.png") repeat top center;
+  z-index: -3;
+  opacity: 0.3;
+  animation: move-clouds-back 200s linear infinite;
+}
+
+//////Room Artist-Info
+
+.ArtistBox {
+  width: 90vw;
+  height: 90vh;
+  position: relative;
+  margin: 0 auto 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.ArtistCard {
+  max-width: 550px;
+  background-image: linear-gradient(
+    to right,
+    rgba(12, 25, 56, 0.452),
+    rgba(36, 80, 138, 0.411)
+  );
+  box-shadow: -1rem 1rem rgb(0, 0, 0);
+  border-radius: 1rem;
+  border: 0.3rem solid rgba(255, 255, 255, 0.418);
+  color: $black;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding: 3rem;
+  gap: 2rem;
+  transition: filter 0.2s ease-in-out;
+}
+
+.ArtistCard:hover {
+  filter: brightness(1.05);
+}
+
+.box1 {
+  flex: 1;
+}
+
+.box1 img {
+  height: 180px;
+  width: auto;
+  display: block;
+  border-radius: 50%;
+  border: 0.3rem solid rgba(255, 255, 255, 0.589);
+  object-fit: contain;
+}
+
+.box2 {
+  max-width: 300px;
+  text-align: left;
+  color: $white;
+}
+
+.ArtistCard h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/////////Room-Artworks
+.Artworks {
+  color: #f4f1bb;
+  text-align: center;
+}
+
+.Art {
+  height: 100vh;
+  width: 100%;
+}
+
+.Art img,
+.Art iframe {
+  display: block;
+  position: relative;
+  margin: auto;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.Art img {
+  max-height: 85vh;
+  max-width: 85vw;
+}
+
+.Art iframe {
+  height: 90vh;
+  width: 90vw;
+}
+
+//////MusicPlayer
+:root {
+  --white: $white;
+  --active-color: $white;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.audio-player {
+  max-width: 350px;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 0 28px rgb(0, 0, 0);
+  margin: auto;
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.247);
+}
+
+.artwork {
+  border-radius: 120px;
+  display: block;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+.track-info {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 4px;
+  margin-top: 20px;
+}
+
+.artist {
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.audio-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 auto 15px;
+}
+
+.audio-controls .prev svg,
+.audio-controls .next svg {
+  width: 35px;
+  height: 35px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.audio-controls .play svg,
+.audio-controls .pause svg {
+  height: 40px;
+  width: 40px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.audio-controls path {
+  fill: var(--white);
+}
+
+.ButtonMaxime {
+  display: block;
+
+  font: inherit;
+  cursor: pointer;
+}
+.progress {
+  width: 80%;
+}
+
+.Tracklist {
+  margin: 30px 5px 5px 5px;
+  padding: 5px;
+}
+
+.Tracks {
+  padding: 5px;
+  padding-left: 10px;
+  border-radius: 5px;
+  color: $white;
+  text-align: left;
+  width: 100%;
+}
+
+.big {
+  font-weight: 900;
+}
+
+.italic {
+  font-style: italic;
+  font-size: small;
+}
+
+.TrackActive {
+  background-color: rgba(0, 0, 0, 0.342);
+}
+
+.MaximeBG {
+  height: 120%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: var(--active-color);
+  padding: 10%;
+  box-shadow: 0 0 20rem 2rem rgba(255, 255, 255, 0.397);
+}
+
+////ABOUT
+
+.about {
+  text-align: center;
+  color: white;
+}
+
+//////////////////////////
+
+footer {
+  color: $white;
+  text-align: center;
+  height: 5;
+  line-height: 5;
+  opacity: 0.6;
+}
+
+.hamburger {
+  display: none;
+}
+
+.line {
+  position: relative;
+  width: 1.6rem;
+  height: 2px;
+  background-color: $white;
+  margin: .4rem;
+  margin-left: auto;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .ArtistCard {
+    flex-direction: column;
+  }
+  .box1 img {
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    max-height: 250px;
+  }
+  .box2 {
+    text-align: center;
+  }
+
+  .Art img {
+    max-height: 100vh;
+    max-width: 100vw;
+    width: 100vw;
+  }
+
+  .hamburger {
+    display: block;
+    width: 80px;
+  }
+
+  .etg {
+  width: 80px;
+  }
+
+  .navLinks{
+   position: absolute;
+   top: 7.5vh;
+   height: auto;
+   width: 100%;
+   flex-direction: column-reverse;
+   display: none;
+   background-color: $black;
+   justify-content: space-around;
+  }
+
+  .navLinks.active {
+    display: flex;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropbtn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .dropdownContent{
+    width: 100vw;
+    right: 0;
+    left: 0;
+  }
+
+.dropdownContentLink {
+  display: inline-block;
+}
+
+  .pagination {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .paginationName {
+    display: none;
+  }
+  .pagination {
+    min-width:0;
+  }
+}
