@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { TiChevronRight, TiChevronLeft } from "react-icons/ti";
 import { AiOutlineRollback } from "react-icons/ai";
 import {GiHamburgerMenu} from "react-icons/gi";
+import {CgMenu, CgClose} from "react-icons/cg";
 
 
 export default function Nav() {
@@ -24,9 +25,10 @@ export default function Nav() {
   }
 
   const handleToggle = () => {
-    document.querySelector('.navLinks').classList.toggle('active')
+    document.querySelector('.navLinks').classList.toggle('active');
+    document.querySelector('.hamburgerToggle').classList.toggle('active');
+    document.querySelector('.closeToggle').classList.toggle('active');
   }
-
 
   return (
     <header>
@@ -53,7 +55,10 @@ export default function Nav() {
           </div>
           <NavLink className={navData => navData.isActive ? 'active' : 'inactive'} to='/about'>.!?</NavLink>
         </div>
-        <GiHamburgerMenu onClick={handleToggle} className='hamburger' size={28} />
+        
+        <CgMenu onClick={handleToggle} className='hamburgerToggle' size={28} />
+      <CgClose onClick={handleToggle} className='closeToggle' size={28} />
+     
       </nav>
     
       )}
@@ -84,7 +89,9 @@ export default function Nav() {
           </div>
           <NavLink className={navData => navData.isActive ? 'active' : 'inactive'} to='/about'>.!? </NavLink>
         </div>
-        <GiHamburgerMenu onClick={handleToggle} className='hamburger' size={28} />
+        <CgMenu onClick={handleToggle} className='hamburgerToggle' size={28} />
+      <CgClose onClick={handleToggle} className='closeToggle' size={28} />
+     
       </nav>
       )}
     </header>

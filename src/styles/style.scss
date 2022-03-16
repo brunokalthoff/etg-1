@@ -492,8 +492,9 @@ body {
 }
 
 .Art {
-  height: 100vh;
+  padding: 15vh 0;
   width: 100%;
+  border: 1px solid green;
 }
 
 .Art img,
@@ -501,11 +502,11 @@ body {
   display: block;
   position: relative;
   margin: auto;
-  top: 50%;
-  transform: translate(0, -50%);
+ 
 }
 
 .Art img {
+  object-fit: contain;
   max-height: 85vh;
   max-width: 85vw;
 }
@@ -656,18 +657,14 @@ footer {
   opacity: 0.6;
 }
 
-.hamburger {
+.hamburgerToggle {
+  display: none
+}
+
+.closeToggle {
   display: none;
 }
 
-.line {
-  position: relative;
-  width: 1.6rem;
-  height: 2px;
-  background-color: $white;
-  margin: .4rem;
-  margin-left: auto;
-}
 
 
 @media only screen and (max-width: 700px) {
@@ -685,12 +682,23 @@ footer {
   }
 
   .Art img {
-    max-height: 100vh;
-    max-width: 100vw;
-    width: 100vw;
+    max-width: 100%;
   }
 
-  .hamburger {
+  .hamburgerToggle {
+    display: block;
+    width: 80px;
+  }
+  
+  .hamburgerToggle.active {
+    display: none;
+  }
+  
+  .closeToggle {
+    display: none;
+  }
+  
+  .closeToggle.active {
     display: block;
     width: 80px;
   }
