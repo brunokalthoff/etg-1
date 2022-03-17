@@ -8,7 +8,7 @@ function About() {
               <div>
                 <div className="Headline">
                   
-                  <h1>About this exhibit</h1>
+                  <h1>About etg#1</h1>
         
                 </div>
                 <p>Hi, I'm Bruno. etg#1 presents my recent artworks and those of 18 friends and artists, most
