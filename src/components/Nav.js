@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { ArtistContext } from '../ArtistContext';
 import { NavLink, Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';

@@ -96,28 +96,28 @@ const artists = [
               artist: 'Maxime GutinBear',
               audioSrc: '/img/artists/7-maxime-gutinbear/asian_orgy.mp3',
               image: '/img/artists/7-maxime-gutinbear/asian_orgy.jpg',
-              color: '$black',
+              color: 'linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1)',
             },
             { 
               title: 'Baguette Break',
               artist: 'Maxime GutinBear',
               audioSrc: '/img/artists/7-maxime-gutinbear/baguette_break.mp3',
               image: '/img/artists/7-maxime-gutinbear/baguette_break.jpg',
-              color: '$black',
+              color: 'linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1)',
             },
             { 
               title: 'Island Life',
               artist: 'Maxime GutinBear',
               audioSrc: '/img/artists/7-maxime-gutinbear/island_life.m4a',
               image: '/img/artists/7-maxime-gutinbear/island_life.jpg',
-              color: '$black',
+              color: 'linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1)',
             },
             { 
               title: 'Happy Lonely',
               artist: 'Maxime GutinBear',
               audioSrc: '/img/artists/7-maxime-gutinbear/happy_lonely.mp3',
               image: '/img/artists/7-maxime-gutinbear/happy_lonely.png',
-              color: '$black',
+              color: 'linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1)',
             }
           ]}
     },
@@ -139,7 +139,7 @@ const artists = [
               artist: 'Michael Tezak',
               audioSrc: '/img/artists/9-michael-tezak/beaches.m4a',
               image: '/img/artists/9-michael-tezak/beaches.jpg',
-              color: '$black',
+              color: 'linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1)',
             }]
         }
     },

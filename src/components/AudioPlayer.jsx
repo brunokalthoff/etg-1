@@ -45,7 +45,7 @@ export default function AudioPlayer() {
       // Set the isReady ref as true for the next pass
       isReady.current = true;
     }
-    document.documentElement.style.setProperty('--active-color', activeColor);
+    document.documentElement.style.setProperty('--active-color', color);
   }, [trackIndex]);
 
   const startTimer = () => {
@@ -107,8 +107,6 @@ export default function AudioPlayer() {
   const handleClick = i => {
     setTrackIndex(i);
   }
-
-  let activeColor = color;
 
   // const onScrubEnd = () => {
   //   // If not already playing, start

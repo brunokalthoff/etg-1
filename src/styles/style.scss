@@ -3,6 +3,7 @@
 $bgColor: #131516;
 $white: #f1f1f1;
 $black: #121212;
+$playerBg: linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1);
 
 $etg: hsl(47, 90%, 76%);
 $etgBlue: rgb(102, 169, 214);
@@ -536,8 +537,8 @@ button {
 }
 
 .audio-player {
-  max-width: 350px;
-  border-radius: 20px;
+  max-width: 300px;
+  border-radius: 2rem;
   padding: 24px;
   box-shadow: 0 0 28px rgb(0, 0, 0);
   margin: auto;
@@ -546,7 +547,7 @@ button {
 }
 
 .artwork {
-  border-radius: 120px;
+  border-radius: 1rem;
   display: block;
   margin: auto;
   height: 200px;
@@ -565,59 +566,57 @@ button {
   font-weight: 700;
   margin-bottom: 4px;
   margin-top: 20px;
+  font-size: 1.5rem;
 }
 
 .artist {
   font-weight: 300;
   margin-top: 0;
+  color: $white;
+
 }
 
 .audio-controls {
   display: flex;
   justify-content: space-between;
-  width: 75%;
-  margin: 0 auto 15px;
+  align-items: center;
+  width: 80%;
+  margin: 1rem auto 0;
 }
 
 .audio-controls .prev svg,
 .audio-controls .next svg {
-  width: 35px;
-  height: 35px;
-  margin-top: 25px;
-  margin-bottom: 10px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .audio-controls .play svg,
 .audio-controls .pause svg {
-  height: 40px;
-  width: 40px;
-  margin-top: 25px;
-  margin-bottom: 10px;
+  height: 4rem;
+  width: 4rem;
 }
 
 .audio-controls path {
-  fill: var(--white);
+  fill: $white;
 }
 
 .ButtonMaxime {
   display: block;
-
   font: inherit;
   cursor: pointer;
 }
 .progress {
   width: 80%;
+  margin-bottom: 1rem;
 }
 
 .Tracklist {
-  margin: 30px 5px 5px 5px;
-  padding: 5px;
+  padding: .5rem;
 }
 
 .Tracks {
-  padding: 5px;
-  padding-left: 10px;
-  border-radius: 5px;
+  padding: .5rem 1rem;
+  border-radius: 1rem;
   color: $white;
   text-align: left;
   width: 100%;
@@ -625,15 +624,16 @@ button {
 
 .big {
   font-weight: 900;
+  font-size: .8rem;
 }
 
 .italic {
   font-style: italic;
-  font-size: small;
+  font-size: .8rem;
 }
 
 .TrackActive {
-  background-color: rgba(0, 0, 0, 0.342);
+  background-color: $black;
 }
 
 .MaximeBG {
