@@ -69,7 +69,7 @@ const artists = [
         name: 'Stephanie Joyce "Kurinai" Lopera',
         shortName:'Kurinai',
         place: 'Antipolo City, Philippines',
-        art: {images: createSrc(3)}
+        art: {images: createSrc(2)}
     },
     {   slug: '5-angelica-marie-dinglasa',
         roomN: 5,
