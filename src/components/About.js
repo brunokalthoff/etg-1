@@ -8,7 +8,7 @@ function About() {
               <div>
                 <div className="Headline">
                   
-                  <h1>About this exhibition</h1>
+                  <h1>About this exhibit</h1>
         
                 </div>
                 <p>Hi, I'm Bruno. etg#1 presents my recent artworks and those of 18 friends and artists, most
@@ -20,12 +20,12 @@ function About() {
                     the simple island life, ultimately amplified by my vivid and intimate social surrounding.
                     etg#1 was born from this inspiration. Here is to share some of it, and to give 
                     my very talented friends a humble platform to present their artworks.
-                    Lastly, this exhibition ought to be the first of many, one each year from now.
+                    Lastly, this exhibition ought to be the first of many, one each year from now!
                     For each beginning bears a special magic...
                     </p>
                     <p>...</p>
                     <p>If you liked, disliked or don't care about this exhibit, please leave some feedback!</p>
-                    <a className='bigButton startTourButton' href="https://fervent-lichterman-562f37.netlify.app/">Feedback</a>
+                    <a className='bigButton startTourButton' href="https://feedbackpostcards.netlify.app/">Feedback</a>
                
               </div>
             </div>

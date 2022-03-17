@@ -1,14 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { ArtistContext } from '../ArtistContext';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { TiChevronRight, TiChevronLeft } from "react-icons/ti";
 import { AiOutlineRollback } from "react-icons/ai";
-import {GiHamburgerMenu} from "react-icons/gi";
-import {CgMenu, CgClose} from "react-icons/cg";
+import { CgMenu, CgClose } from "react-icons/cg";
 
 
 export default function Nav() {
+  // useEffect(() => {
+  //   console.log('adding event listener');
+  //   document.addEventListener('mousedown', (e) => {
+  //     console.log(e.target.classList)
+  //     if (e.target.classList.contains('dropbtn')) return;
+  //     if (e.target.classList.contains('inactive')) return;
+  //     else {
+  //       document.querySelector('.dropdownContent').classList.toggle('open');
+  //     }
+  //   });
+  // }, []);
+
 
   const [artists, getRoomNumber] = useContext(ArtistContext);
   const { room } = useParams();
@@ -25,74 +36,76 @@ export default function Nav() {
   }
 
   const handleToggle = () => {
-    document.querySelector('.navLinks').classList.toggle('active');
-    document.querySelector('.hamburgerToggle').classList.toggle('active');
-    document.querySelector('.closeToggle').classList.toggle('active');
+    document.querySelector('.navLinks').classList.toggle('show');
+    document.querySelector('.hamburgerToggle').classList.toggle('hide');
+    document.querySelector('.closeToggle').classList.toggle('show');
+  }
+
+  const handleClick = () => {
+    document.querySelector('.dropdownContent').classList.toggle('open');
   }
 
   return (
     <header>
       {!room && (
         <nav className='navbar'>
-        <NavLink className='etg' to='/rooms/all'>etg#1</NavLink>
-    
-        <div className='navLinks'>
-          {/* <NavLink className={navData => navData.isActive ? 'active' : 'inactive'} to='/rooms/all'>All Rooms</NavLink> */}
-          <div className='dropdown'>
-    
-            <div className='dropbtn'>Artists ▼</div>
-            <div className='dropdownContent'>
-    
-              {artists.map(r => (
-                <NavLink key={r.roomN} className={navData => navData.isActive ? 'active dropdownContentLink' : 'inactive dropdownContentLink'} to={'/rooms/' + r.slug}>
-                  {r.name} ({r.roomN})
-                </NavLink>
-              )
-              )}
-    
+          <Link className='etg' to='/rooms/all'>etg#1</Link>
+          <div className='navLinks'>
+            <div onClick={handleClick} className='dropdown'>
+
+              <div className='dropbtn'>Artists ▼</div>
+              <div className='dropdownContent'>
+
+                {artists.map(r => (
+                  <NavLink onClick={handleToggle} key={r.roomN} className={navData => navData.isActive ? 'active' : 'inactive'} to={'/rooms/' + r.slug}>
+                    {r.name} ({r.roomN})
+                  </NavLink>
+                )
+                )}
+
+              </div>
+
             </div>
-    
+            <NavLink onClick={handleToggle} className={navData => navData.isActive ? 'active' : 'inactive'} to='/about'>.!?</NavLink>
           </div>
-          <NavLink className={navData => navData.isActive ? 'active' : 'inactive'} to='/about'>.!?</NavLink>
-        </div>
-        
-        <CgMenu onClick={handleToggle} className='hamburgerToggle' size={28} />
-      <CgClose onClick={handleToggle} className='closeToggle' size={28} />
-     
-      </nav>
-    
+          <div className="toggleMenu">
+            <CgMenu onClick={handleToggle} className='hamburgerToggle' size={28} />
+            <CgClose onClick={handleToggle} className='closeToggle' size={28} />
+          </div>
+        </nav>
+
       )}
       {room && (
         <nav className='navbar'>
 
-        <NavLink className='etg' to='/rooms/all'>etg#1</NavLink>
-    
-        <div className='pagination'>
-          <NavLink to={'/rooms/' + prev}>{prev === 'all' ? '' : <TiChevronLeft size={20} />}</NavLink>
-          <p style={{ display: 'block' }}> <span className='paginationNumber' style={index + 1 < 10 ? { padding: '0.2rem .5rem' } : { padding: '0.25rem .3rem' }}>{index + 1}</span><span className='paginationName'>{artists[index].shortName}</span> </p>
-          <NavLink to={'/rooms/' + next}>{next === 'all' ? <AiOutlineRollback size={20} /> : <TiChevronRight size={20} />}</NavLink>
-        </div>
-    
-        <div className='navLinks'>
-          {/* <NavLink className={navData => navData.isActive ? 'active' : 'inactive'} to='/rooms/all'><AiFillHome size={20}/></NavLink> */}
-          <div className='dropdown'>
-    
-            <div className='dropbtn'>Artists ▼</div>
-            <div className='dropdownContent'>
-              {artists.map(r => (
-                <NavLink key={r.roomN} className={navData => navData.isActive ? 'active dropdownContentLink' : 'inactive dropdownContentLink'} to={'/rooms/' + r.slug}>
-                  {r.name} ({r.roomN})
-                </NavLink>
-              )
-              )}
-            </div>
+          <NavLink className='etg' to='/rooms/all'>etg#1</NavLink>
+
+          <div className='pagination'>
+            <NavLink to={'/rooms/' + prev}>{prev === 'all' ? '' : <TiChevronLeft size={20} />}</NavLink>
+            <p style={{ display: 'block' }}> <span className='paginationNumber' style={index + 1 < 10 ? { padding: '0.2rem .5rem' } : { padding: '0.25rem .3rem' }}>{index + 1}</span><span className='paginationName'>{artists[index].shortName}</span> </p>
+            <NavLink to={'/rooms/' + next}>{next === 'all' ? <AiOutlineRollback size={20} /> : <TiChevronRight size={20} />}</NavLink>
           </div>
-          <NavLink className={navData => navData.isActive ? 'active' : 'inactive'} to='/about'>.!? </NavLink>
-        </div>
-        <CgMenu onClick={handleToggle} className='hamburgerToggle' size={28} />
-      <CgClose onClick={handleToggle} className='closeToggle' size={28} />
-     
-      </nav>
+
+          <div className='navLinks'>
+            <div className='dropdown'>
+
+              <div onClick={handleClick} className='dropbtn'>Artists ▼</div>
+              <div className='dropdownContent'>
+                {artists.map(r => (
+                  <NavLink onClick={handleToggle} key={r.roomN} className={navData => navData.isActive ? 'active' : 'inactive'} to={'/rooms/' + r.slug}>
+                    {r.name} ({r.roomN})
+                  </NavLink>
+                )
+                )}
+              </div>
+            </div>
+            <NavLink onClick={handleToggle} className={navData => navData.isActive ? 'active' : 'inactive'} to='/about'>.!? </NavLink>
+          </div>
+          <div className="toggleMenu">
+            <CgMenu onClick={handleToggle} className='hamburgerToggle' size={28} />
+            <CgClose onClick={handleToggle} className='closeToggle' size={28} />
+          </div>
+        </nav>
       )}
     </header>
   )

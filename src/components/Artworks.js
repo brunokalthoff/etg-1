@@ -9,24 +9,23 @@ export default function Artworks() {
   const { room } = useParams();
 
   const roomNum = getRoomNumber(room);
-  console.log(roomNum)
 
   let display = (
     <div className='Artworks'>
       {/* PICTURES */}
-      {artists[roomNum].art.images && artists[roomNum].art.images.map((piece, index) =>
+      {artists[roomNum].art.images && artists[roomNum].art.images.map((piece, i) =>
       (
         <div className='Art'>
-          <img key={index} src={process.env.PUBLIC_URL + '/img/artists/' + room + '/' + piece.title + piece.suffix} alt={piece.title} />
+          <img key={i} src={process.env.PUBLIC_URL + '/img/artists/' + room + '/' + piece.title + piece.suffix} alt={piece.title} />
         </div>
       )
       )
       }
       {/* VIDEOS */}
-      {artists[roomNum].art.videos && artists[roomNum].art.videos.map((piece, index) =>
+      {artists[roomNum].art.videos && artists[roomNum].art.videos.map((piece, i) =>
       (
         <div className='Art'>
-          <iframe key={index} title={artists[roomNum].name}
+          <iframe key={i} title={artists[roomNum].name}
             src={piece}
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture"

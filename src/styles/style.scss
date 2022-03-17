@@ -54,6 +54,7 @@ a {
 }
 
 body {
+  max-width: 100%;
   background: $bgColor;
   box-shadow: inset 0 1rem 30rem -1rem rgba(245, 245, 245, 0.151);
   position: relative;
@@ -78,6 +79,7 @@ body {
   font-weight: 700;
   font-size: 0.9rem;
   font-family: monospace;
+  padding: 5px
   // border-bottom: .1rem solid rgba(255, 255, 255, 0.137);
 }
 
@@ -122,7 +124,7 @@ body {
 .dropbtn {
   color: $white;
   cursor: pointer;
-  padding: 1rem;
+  padding: .8rem;
 }
 
 .dropdown {
@@ -157,7 +159,7 @@ body {
   border-radius: 1rem;
 }
 
-.dropdownContentLink {
+.dropdownContent a {
   text-decoration: none;
   display: block;
   font-weight: 700;
@@ -173,11 +175,15 @@ body {
   border-radius: 1rem 0 0 1rem;
 }
 
-.dropdown:hover .dropdownContent {
+// .dropdown:hover .dropdownContent {
+//   display: block;
+// }
+
+.dropdownContent.open {
   display: block;
 }
 
-.dropdownContentLink:hover {
+.dropdownContent a:hover {
   color: $black;
 }
 
@@ -265,27 +271,6 @@ body {
 
 /////////Rooms
 
-.Page-Title {
-  text-align: center;
-  padding-top: 6vh;
-  max-width: 1200px;
-  position: relative;
-  margin: 0 auto;
-  min-height: 100vh;
-}
-
-.Page-Title h6 {
-  font-weight: 100;
-}
-
-.Page-Title p {
-  font-size: clamp(1rem, 3.5vw, 1.2rem);
-  color: $white;
-  width: clamp(200px, 60%, 600px);
-  margin: 8vh auto 0;
-  line-height: 1.6rem;
-}
-
 @keyframes hue {
   from {
     filter: hue-rotate(0deg);
@@ -294,6 +279,7 @@ body {
     filter: hue-rotate(-360deg);
   }
 }
+
 .Headline {
   background-image: linear-gradient(500deg, $etg, $etgBlue);
   background-clip: text;
@@ -305,6 +291,29 @@ body {
   letter-spacing: 0.1em;
   font-size: 2rem;
   margin: 2rem 12%;
+}
+
+.Headline h6 {
+  color: $white;
+  font-weight: 100;
+  opacity: .6;
+}
+
+.Page-Title {
+  text-align: center;
+  padding-top: 6vh;
+  max-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.Page-Title p {
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  color: $white;
+  width: clamp(200px, 60%, 600px);
+  margin: 8vh auto 0;
+  line-height: 1.6rem;
 }
 
 .Room-Links-Container {
@@ -655,6 +664,11 @@ footer {
   opacity: 0.6;
 }
 
+.toggleMenu {
+  display: none;
+  cursor: pointer;
+}
+
 .hamburgerToggle {
   display: none
 }
@@ -662,8 +676,6 @@ footer {
 .closeToggle {
   display: none;
 }
-
-
 
 @media only screen and (max-width: 700px) {
   .ArtistCard {
@@ -679,50 +691,72 @@ footer {
     text-align: center;
   }
 
-
-
   .Art img {
     object-fit: contain;
     max-height: 90vh;
     max-width: 100%;
-
     width: 100%;
   }
 
-  .hamburgerToggle {
+  .toggleMenu {
     display: block;
-    width: 80px;
+    width: 68px;
+    color: $white;
+  }
+
+  .hamburgerToggle {
+    padding-block-end: -10px;
+    display: block;
+    margin-left: auto;
   }
   
-  .hamburgerToggle.active {
+  .hamburgerToggle.hide {
     display: none;
   }
   
   .closeToggle {
     display: none;
+    margin-left: auto;
   }
   
-  .closeToggle.active {
+  .closeToggle.show {
     display: block;
-    width: 80px;
   }
 
   .etg {
-  width: 80px;
+  width: auto;
+  margin-left: 0;
   }
 
   .navLinks{
    position: absolute;
    top: 7.5vh;
+   left: 0;
+   right: 0;
    height: auto;
    width: 100%;
    flex-direction: column-reverse;
    display: none;
-   background-color: $black;
    justify-content: space-around;
+   border-radius: 0;
+  }
+  
+  .navLinks a {
+    border-radius: 0;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.281);
   }
 
-  .navLinks.active {
+  .navLinks a:hover {
+    border-radius: 0;
+  }
+
+  .dropdownContent a:hover {
+    border-radius: 0;
+  }
+
+  .navLinks.show {
     display: flex;
   }
 
@@ -736,14 +770,14 @@ footer {
   }
   
   .dropdownContent{
-    width: 100vw;
-    right: 0;
-    left: 0;
+    width: 100%;
+    border-radius: 0;
   }
 
-.dropdownContentLink {
-  display: inline-block;
-}
+// .dropdownContent a {
+//   display: inline-block;
+// }
+
 
   .pagination {
     width: auto;
