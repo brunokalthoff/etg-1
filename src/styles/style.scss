@@ -57,9 +57,9 @@ a {
 body {
   max-width: 100%;
   background: $bgColor;
-  box-shadow: inset 0 1rem 30rem -1rem rgba(245, 245, 245, 0.151);
+  box-shadow: inset 0 10rem 10rem -9rem rgba(61, 66, 141, 0.596);
   position: relative;
-  top: 7.5vh;
+  padding-top: 2.8rem;
   overflow-x: hidden;
 }
 
@@ -67,20 +67,21 @@ body {
 
 .navbar {
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100%;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 7.5vh;
+  height: 2.8rem;
   background: $black;
   color: $white;
   font-weight: 700;
   font-size: 0.9rem;
   font-family: monospace;
-  padding: 5px
+  padding: 5px;
+
   // border-bottom: .1rem solid rgba(255, 255, 255, 0.137);
 }
 
@@ -125,7 +126,7 @@ body {
 .dropbtn {
   color: $white;
   cursor: pointer;
-  padding: .8rem;
+  padding: 0.8rem;
 }
 
 .dropdown {
@@ -205,7 +206,7 @@ body {
   background-color: $white;
   color: $black;
   border-radius: 50%;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .pagination a {
@@ -246,24 +247,25 @@ body {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 700;
-  color: rgb(29, 29, 29);
+  color: $black;
   border: 0.2rem solid $black;
   border-radius: 1rem 0 1rem 1rem;
   filter: brightness(1.1);
   background-image: $etgGradient;
   transition: all 0.2s ease-in-out;
-  box-shadow: -0.5rem 0.5rem rgb(29, 29, 29), 0 0 2rem 0.5rem $white;
+  box-shadow: -0.5rem 0.5rem $black, 0 0 2rem 0.5rem $white;
 }
 
 .bigButton:hover {
-  box-shadow: -1rem 1rem rgb(29, 29, 29), 0 0 2rem 0.5rem $white;
+  box-shadow: -1rem 1rem $black, 0 0 2rem 0.5rem $white;
   filter: brightness(1.1);
   transform: scale(1.01);
 }
 
 .startTourButton {
   margin: 6vh auto;
-  box-shadow: -0.5rem 0.5rem $white, 0 0 30rem .01rem rgba(255, 255, 255, 0.493);
+  box-shadow: -0.5rem 0.5rem $white,
+    0 0 30rem 0.01rem rgba(255, 255, 255, 0.349);
 }
 
 .startTourButton:hover {
@@ -286,7 +288,7 @@ body {
   background-clip: text;
   color: $etg;
   animation: hue 4s infinite linear;
-  text-shadow: 0px 0px 5rem rgba(255, 255, 255, 0.979);
+  text-shadow: 0px 0px 5rem rgba(255, 255, 255, 0.719);
   font-family: monospace;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -297,7 +299,7 @@ body {
 .Headline h6 {
   color: $white;
   font-weight: 100;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .Page-Title {
@@ -315,6 +317,13 @@ body {
   width: clamp(200px, 60%, 600px);
   margin: 8vh auto 0;
   line-height: 1.6rem;
+}
+
+
+#openDate{
+  color: black;
+background-color: $etg;
+  display: inline;
 }
 
 .Room-Links-Container {
@@ -455,7 +464,7 @@ body {
     rgba(12, 25, 56, 0.452),
     rgba(36, 80, 138, 0.411)
   );
-  box-shadow: -1rem 1rem rgb(0, 0, 0);
+  box-shadow: -1rem 1rem black;
   border-radius: 1rem;
   border: 0.3rem solid rgba(255, 255, 255, 0.418);
   color: $black;
@@ -502,7 +511,7 @@ body {
 }
 
 .Art {
-  padding: 15vh 0;
+  padding: 0 0 20vh;
   width: 100%;
 }
 
@@ -573,7 +582,6 @@ button {
   font-weight: 300;
   margin-top: 0;
   color: $white;
-
 }
 
 .audio-controls {
@@ -611,11 +619,11 @@ button {
 }
 
 .Tracklist {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .Tracks {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 1rem;
   color: $white;
   text-align: left;
@@ -624,12 +632,12 @@ button {
 
 .big {
   font-weight: 900;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .italic {
   font-style: italic;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .TrackActive {
@@ -670,7 +678,7 @@ footer {
 }
 
 .hamburgerToggle {
-  display: none
+  display: none;
 }
 
 .closeToggle {
@@ -678,6 +686,9 @@ footer {
 }
 
 @media only screen and (max-width: 700px) {
+  .Headline {
+    text-shadow: 0px 0px 5rem rgba(255, 255, 255, 0.356);
+  }
   .ArtistCard {
     flex-direction: column;
   }
@@ -709,38 +720,38 @@ footer {
     display: block;
     margin-left: auto;
   }
-  
+
   .hamburgerToggle.hide {
     display: none;
   }
-  
+
   .closeToggle {
     display: none;
     margin-left: auto;
   }
-  
+
   .closeToggle.show {
     display: block;
   }
 
   .etg {
-  width: auto;
-  margin-left: 0;
+    width: auto;
+    margin-left: 0;
   }
 
-  .navLinks{
-   position: absolute;
-   top: 7.5vh;
-   left: 0;
-   right: 0;
-   height: auto;
-   width: 100%;
-   flex-direction: column-reverse;
-   display: none;
-   justify-content: space-around;
-   border-radius: 0;
+  .navLinks {
+    position: absolute;
+    top: 2.8rem;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100%;
+    flex-direction: column-reverse;
+    display: none;
+    justify-content: space-around;
+    border-radius: 0;
   }
-  
+
   .navLinks a {
     border-radius: 0;
     text-align: center;
@@ -767,17 +778,18 @@ footer {
   .dropbtn {
     width: 100%;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.281);
   }
-  
-  .dropdownContent{
+
+  .dropdownContent {
     width: 100%;
     border-radius: 0;
+    background-color: rgb(42, 44, 53);
   }
 
-// .dropdownContent a {
-//   display: inline-block;
-// }
-
+  // .dropdownContent a {
+  //   display: inline-block;
+  // }
 
   .pagination {
     width: auto;
@@ -789,6 +801,6 @@ footer {
     display: none;
   }
   .pagination {
-    min-width:0;
+    min-width: 0;
   }
 }
