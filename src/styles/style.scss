@@ -7,6 +7,8 @@ $playerBg: linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1);
 
 $etg: hsl(47, 90%, 76%);
 $etgBlue: rgb(102, 169, 214);
+$bodyShadowAbout: rgba(102, 169, 214, 0.603);
+$bodyShadowDarkBlue: rgba(14, 105, 165, 0.603);
 
 $etgBlueGradient: linear-gradient(500deg, $etgBlue, $white);
 
@@ -16,6 +18,11 @@ $scrollbarThumb: $white;
 $scrollbarTrack: $black;
 
 $shirtYellow: hsl(47, 90%, 76%);
+
+:root {
+  --bodyShadow: rgba(8, 114, 185, 0.575);
+}
+
 
 * {
   box-sizing: border-box;
@@ -57,7 +64,7 @@ a {
 body {
   max-width: 100%;
   background: $bgColor;
-  box-shadow: inset 0 10rem 10rem -9rem rgba(61, 66, 141, 0.596);
+  box-shadow: inset 0 10rem 10rem -9rem var(--bodyShadow);
   position: relative;
   padding-top: 2.8rem;
   overflow-x: hidden;
@@ -87,7 +94,9 @@ body {
 
 .etg {
   font-style: italic;
-  font-size: 1.5rem;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2rem;
+  font-weight: 900;
   width: 180px;
   background-image: $etgBlueGradient !important;
   background-clip: text;
@@ -241,11 +250,11 @@ body {
   display: inline-block;
   cursor: pointer;
   max-width: 80vw;
-  padding: 2rem 4rem;
-  font-family: monospace;
+  padding: 1rem 3rem;
+  font-family: 'Amatic SC', cursive;
   text-decoration: none;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: $black;
   border: 0.2rem solid $black;
@@ -293,13 +302,17 @@ body {
   font-weight: 900;
   letter-spacing: 0.1em;
   font-size: 2rem;
-  margin: 2rem 12%;
+  margin: 1rem 12%;
 }
 
+
 .Headline h6 {
+  font-family: 'Amatic SC', cursive;
   color: $white;
   font-weight: 100;
+  font-size: 1.5rem;
   opacity: 0.6;
+  padding-bottom: .5rem;
 }
 
 .Page-Title {
@@ -319,14 +332,17 @@ body {
   line-height: 1.6rem;
 }
 
-
 #openDate{
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 700;
   color: black;
-background-color: $etg;
+  background: $etgBlue !important;
   display: inline;
+  font-family: 'Amatic SC';
 }
 
-.Room-Links-Container {
+.roomLinksContainer {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -335,6 +351,10 @@ background-color: $etg;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 0 20vh;
+}
+
+.roomLinksContainer p:nth-child(1) {
+  font-size: 11rem;
 }
 
 @keyframes ship {

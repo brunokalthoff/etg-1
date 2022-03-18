@@ -4,7 +4,6 @@ import Artworks from './Artworks';
 import Artistbox from './Artistbox';
 
 export default function Room() {
-
     useEffect(() => { window.scrollTo(0, 0); });
 
     return (

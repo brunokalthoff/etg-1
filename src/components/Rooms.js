@@ -3,10 +3,9 @@ import { ArtistContext } from '../ArtistContext';
 import { Link } from 'react-router-dom';
 import Nav from './Nav';
 import Headline from './Headline';
-
+import Footer from './Footer';
 
 export default function Rooms() {
-
   const [artists] = useContext(ArtistContext);
   return (
     <>
@@ -16,7 +15,7 @@ export default function Rooms() {
       <div className="twinkling"></div>
       <div className="clouds"></div>
 
-      <div className='Room-Links-Container'>
+      <div className='roomLinksContainer'>
         {artists.map((x, i) => (
           <Link className={`Room-Link ship${i % 5}`} to={'/rooms/' + x.slug} key={x.roomN}>
             <div>
@@ -27,7 +26,7 @@ export default function Rooms() {
           </Link>
         ))}
       </div>
-      <footer> <small>&copy; 2021, Enter The Gateway</small> </footer> 
+      <Footer />
     </>
   )
 };

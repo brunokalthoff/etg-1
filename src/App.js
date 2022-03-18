@@ -9,7 +9,6 @@ import Redirect from './components/Redirect';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App () {
- 
 return (
   <ArtistProvider>
     <ScrollToTop />
