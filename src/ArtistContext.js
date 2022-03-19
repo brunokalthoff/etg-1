@@ -102,21 +102,21 @@ const artists = [
               title: 'Baguette Break',
               artist: 'Maxime GutinBear',
               audioSrc: '/img/artists/7-maxime-gutinbear/baguette_break.mp3',
-              image: '/img/artists/7-maxime-gutinbear/baguette_break.jpg',
+              image: 'https://www.pngfind.com/pngs/m/4-42890_he-is-the-french-baguette-mannnnnnnnnn-cartoon-hd.png',
               color: 'linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1)',
             },
             { 
               title: 'Island Life',
               artist: 'Maxime GutinBear',
               audioSrc: '/img/artists/7-maxime-gutinbear/island_life.m4a',
-              image: '/img/artists/7-maxime-gutinbear/island_life.jpg',
+              image: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f71b7733-bca7-4f0c-b445-7643293d9ff1/dbux66h-1583beed-c72b-4db4-a93f-b0ed93c8765c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Y3MWI3NzMzLWJjYTctNGYwYy1iNDQ1LTc2NDMyOTNkOWZmMVwvZGJ1eDY2aC0xNTgzYmVlZC1jNzJiLTRkYjQtYTkzZi1iMGVkOTNjODc2NWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.VZgln7rP-RXOvpq9l-k6ox7K5ITISQ9gUBJPiRIase4',
               color: 'linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1)',
             },
             { 
               title: 'Happy Lonely',
               artist: 'Maxime GutinBear',
               audioSrc: '/img/artists/7-maxime-gutinbear/happy_lonely.mp3',
-              image: '/img/artists/7-maxime-gutinbear/happy_lonely.png',
+              image: 'https://www.artmajeur.com/medias/standard/l/a/lampros-antonaros/artwork/8732020_20151003-103716.jpg',
               color: 'linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1)',
             }
           ]}
