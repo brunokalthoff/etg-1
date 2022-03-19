@@ -102,7 +102,7 @@ const artists = [
               title: 'Baguette Break',
               artist: 'Maxime GutinBear',
               audioSrc: '/img/artists/7-maxime-gutinbear/baguette_break.mp3',
-              image: 'https://www.pngfind.com/pngs/m/4-42890_he-is-the-french-baguette-mannnnnnnnnn-cartoon-hd.png',
+              image: 'https://p.kindpng.com/picc/s/484-4843075_he-is-the-french-baguette-mannnnnnnnnn-pixelated-baguette.png',
               color: 'linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1)',
             },
             { 
