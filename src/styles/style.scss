@@ -1,0 +1,820 @@
+$bgColor: #131516;
+$white: #f1f1f1;
+$black: #121212;
+$playerBg: linear-gradient(40deg, rgb(102, 169, 214), #f1f1f1);
+
+$etg: hsl(47, 90%, 76%);
+$etgBlue: rgb(102, 169, 214);
+$bodyShadowAbout: rgba(102, 169, 214, 0.603);
+$bodyShadowDarkBlue: rgba(14, 105, 165, 0.603);
+
+$etgBlueGradient: linear-gradient(500deg, $etgBlue, $white);
+
+$etgGradient: linear-gradient(500deg, $etg, hsl(47, 75%, 66%));
+
+$scrollbarThumb: $white;
+$scrollbarTrack: $black;
+
+$shirtYellow: hsl(47, 90%, 76%);
+
+:root {
+  --bodyShadow: rgba(8, 114, 185, 0.575);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: "Inconsolata", monospace;
+  scrollbar-color: $scrollbarThumb $scrollbarTrack;
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 0.4rem;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: $scrollbarTrack;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: $scrollbarThumb;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.151);
+  border-radius: 0.4rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  max-width: 100%;
+  background: $bgColor;
+  box-shadow: inset 0 10rem 10rem -9rem var(--bodyShadow);
+  position: relative;
+  padding-top: 2.8rem;
+  overflow-x: hidden;
+}
+
+//////Navbar
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2.8rem;
+  background: $black;
+  color: $white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-family: monospace;
+  padding: 5px;
+}
+
+.etg {
+  font-style: italic;
+  font-family: "Amatic SC", cursive;
+  font-size: 2rem;
+  font-weight: 900;
+  width: max-content;
+  padding-right: .5rem;
+  background-image: $etgBlueGradient !important;
+  background-clip: text;
+  color: transparent;
+  margin-left: 1rem;
+}
+
+.navLinks {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  width: fit-content;
+  height: 100%;
+  margin-right: 1rem;
+  background-color: $black;
+}
+
+.navLinks a {
+  padding: 0.8rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  background-color: $black;
+}
+
+.active {
+  color: $etg;
+  filter: brightness(1.1);
+}
+
+.inactive {
+  color: $white;
+  text-decoration: none;
+}
+
+.dropbtn {
+  color: $white;
+  cursor: pointer;
+  padding: 0.8rem;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdownContent {
+  width: 100%;
+  right: 0;
+  position: absolute;
+  background-color: $black;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  max-height: 70vh;
+  scrollbar-color: $scrollbarThumb $scrollbarTrack;
+  scrollbar-width: thin;
+  border-radius: 1rem 0 0 1rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.11);
+}
+
+.dropdownContent::-webkit-scrollbar {
+  width: 0.2rem;
+  border-radius: 1rem;
+  background-color: $scrollbarTrack;
+}
+
+.dropdownContent::-webkit-scrollbar-thumb {
+  background: $scrollbarThumb;
+  border-radius: 1rem;
+}
+
+.dropdownContent a {
+  text-decoration: none;
+  display: block;
+  font-weight: 700;
+}
+
+.inactive:hover {
+  background-image: $etgGradient;
+  color: $black;
+}
+
+.dropdownContent a:hover {
+  background-image: $etgGradient;
+  border-radius: 1rem 0 0 1rem;
+}
+
+// .dropdown:hover .dropdownContent {
+//   display: block;
+// }
+
+.dropdownContent.open {
+  display: block;
+}
+
+.dropdownContent a:hover {
+  color: $black;
+}
+
+.pagination {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  height: 100%;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 230px;
+}
+
+.pagination p {
+  display: inline;
+}
+
+.paginationNumber {
+  background-color: $white;
+  color: $black;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.pagination a {
+  border-radius: 1rem;
+  padding: 0.6rem;
+  color: $white;
+  transition: all 0.2s ease-in-out;
+}
+
+.pagination a:hover {
+  transform: scale(1.3);
+}
+
+/////////
+
+.Start {
+  position: fixed;
+  top: 0vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url("start-ufo.jpg");
+}
+
+.bigButton {
+  display: inline-block;
+  cursor: pointer;
+  max-width: 80vw;
+  padding: 1rem 3rem;
+  font-family: "Amatic SC", cursive;
+  text-decoration: none;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: $black;
+  border: 0.2rem solid $black;
+  border-radius: 1rem 0 1rem 1rem;
+  filter: brightness(1.1);
+  background-image: $etgGradient;
+  transition: all 0.2s ease-in-out;
+  box-shadow: -0.5rem 0.5rem $black, 0 0 2rem 0.5rem $white;
+}
+
+.bigButton:hover {
+  box-shadow: -1rem 1rem $black, 0 0 2rem 0.5rem $white;
+  filter: brightness(1.1);
+  transform: scale(1.01);
+}
+
+.startTourButton {
+  margin: 6vh auto;
+  box-shadow: -0.5rem 0.5rem $white,
+    0 0 30rem 0.01rem rgba(255, 255, 255, 0.349);
+}
+
+.startTourButton:hover {
+  box-shadow: -1rem 1rem $white;
+}
+
+/////////Rooms
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(-360deg);
+  }
+}
+
+.Headline {
+  background-image: linear-gradient(500deg, $etg, $etgBlue);
+  background-clip: text;
+  color: $etg;
+  animation: hue 4s infinite linear;
+  text-shadow: 0px 0px 5rem rgba(255, 255, 255, 0.719);
+  font-family: monospace;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  font-size: 2rem;
+  margin: 1rem 12%;
+}
+
+.Headline h6 {
+  font-family: "Amatic SC", cursive;
+  color: $white;
+  font-weight: 100;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  padding-bottom: 0.5rem;
+}
+
+.Page-Title {
+  text-align: center;
+  padding-top: 6vh;
+  max-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.Page-Title p {
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  color: $white;
+  width: clamp(200px, 60%, 600px);
+  margin: 8vh auto 0;
+  line-height: 1.6rem;
+}
+
+#openDate {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  color: black;
+  background: $etgBlue !important;
+  display: inline;
+  font-family: "Amatic SC";
+}
+
+.roomLinksContainer {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 20vh;
+}
+
+.roomLinksContainer p:nth-child(1) {
+  font-size: 11rem;
+}
+
+@keyframes ship {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(1rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.Room-Link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.952);
+  font-size: 1.4rem;
+  margin: 10vh;
+  position: relative;
+  line-height: 1.6rem;
+  max-width: 300px;
+}
+
+.Room-Link p {
+  margin: 5px 0 0;
+}
+
+.ship0 {
+  animation: ship 2s ease-in-out infinite reverse;
+}
+.ship1 {
+  animation: ship 2s linear infinite normal;
+}
+.ship2 {
+  animation: ship 2s ease infinite reverse;
+}
+.ship3 {
+  animation: ship 2s ease-out infinite alternate;
+}
+.ship4 {
+  animation: ship 2s ease-in infinite alternate;
+}
+
+.Room-Link img {
+  height: auto;
+  width: 220px;
+  size: contain;
+  margin-bottom: -7vh;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Room-Link img:hover {
+  transform: scale(1.6) translateY(-2.3vh);
+  transition: transform 0.4s ease-out;
+}
+
+//stars background
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+@keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+.stars,
+.twinkling,
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stars {
+  background: #000 url("stars.png") repeat top center;
+  z-index: -5;
+}
+
+.twinkling {
+  background: transparent url("twinkling.png") repeat top center;
+  z-index: -4;
+  animation: move-twink-back 200s linear infinite;
+}
+
+.clouds {
+  background: transparent url("clouds.png") repeat top center;
+  z-index: -3;
+  opacity: 0.3;
+  animation: move-clouds-back 200s linear infinite;
+}
+
+//////Room Artist-Info
+
+.ArtistBox {
+  width: 90vw;
+  height: 90vh;
+  position: relative;
+  margin: 0 auto 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.ArtistCard {
+  max-width: 550px;
+  background-image: linear-gradient(
+    to right,
+    rgba(12, 25, 56, 0.452),
+    rgba(36, 80, 138, 0.411)
+  );
+  box-shadow: -1rem 1rem black;
+  border-radius: 1rem;
+  border: 0.3rem solid rgba(255, 255, 255, 0.418);
+  color: $black;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding: 3rem;
+  gap: 2rem;
+  transition: filter 0.2s ease-in-out;
+}
+
+.ArtistCard:hover {
+  filter: brightness(1.05);
+}
+
+.box1 {
+  flex: 1;
+}
+
+.box1 img {
+  height: 180px;
+  width: auto;
+  display: block;
+  border-radius: 50%;
+  border: 0.3rem solid rgba(255, 255, 255, 0.589);
+  object-fit: contain;
+}
+
+.box2 {
+  max-width: 300px;
+  text-align: left;
+  color: $white;
+}
+
+.ArtistCard h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/////////Room-Artworks
+.Artworks {
+  color: #f4f1bb;
+  text-align: center;
+}
+
+.Art {
+  padding: 0 0 20vh;
+  width: 100%;
+}
+
+.Art img,
+.Art iframe {
+  display: block;
+  position: relative;
+  margin: auto;
+}
+
+.Art img {
+  object-fit: contain;
+  max-height: 85vh;
+  max-width: 85vw;
+}
+
+.Art iframe {
+  height: 90vh;
+  width: 90vw;
+}
+
+//////MusicPlayer
+:root {
+  --white: $white;
+  --active-color: $white;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.audio-player {
+  max-width: 300px;
+  border-radius: 2rem;
+  padding: 24px;
+  box-shadow: 0 0 28px rgb(0, 0, 0);
+  margin: auto;
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.247);
+}
+
+.artwork {
+  border-radius: 1rem;
+  display: block;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+.track-info {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 4px;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+.artist {
+  font-weight: 300;
+  margin-top: 0;
+  color: $white;
+}
+
+.audio-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 1rem auto 0;
+}
+
+.audio-controls .prev svg,
+.audio-controls .next svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.audio-controls .play svg,
+.audio-controls .pause svg {
+  height: 4rem;
+  width: 4rem;
+}
+
+.audio-controls path {
+  fill: $white;
+}
+
+.ButtonMaxime {
+  display: block;
+  font: inherit;
+  cursor: pointer;
+}
+.progress {
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.Tracklist {
+  padding: 0.5rem;
+}
+
+.Tracks {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: $white;
+  text-align: left;
+  width: 100%;
+}
+
+.big {
+  font-weight: 900;
+  font-size: 0.8rem;
+}
+
+.italic {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.TrackActive {
+  background-color: $black;
+}
+
+.MaximeBG {
+  height: 120%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: var(--active-color);
+  padding: 10%;
+  box-shadow: 0 0 20rem 2rem rgba(255, 255, 255, 0.397);
+}
+
+////ABOUT
+
+.about {
+  text-align: center;
+  color: white;
+}
+
+//////////////////////////
+
+footer {
+  color: $white;
+  text-align: center;
+  height: 5;
+  line-height: 5;
+  opacity: 0.6;
+}
+
+.toggleMenu {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburgerToggle {
+  display: none;
+}
+
+.closeToggle {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .Headline {
+    text-shadow: 0px 0px 5rem rgba(255, 255, 255, 0.356);
+  }
+  .ArtistCard {
+    flex-direction: column;
+  }
+  .box1 img {
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    max-height: 250px;
+  }
+  .box2 {
+    text-align: center;
+  }
+
+  .Art img {
+    object-fit: contain;
+    max-height: 90vh;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .toggleMenu {
+    display: block;
+    width: 68px;
+    color: $white;
+  }
+
+  .hamburgerToggle {
+    padding-block-end: -10px;
+    display: block;
+    margin-left: auto;
+  }
+
+  .hamburgerToggle.hide {
+    display: none;
+  }
+
+  .closeToggle {
+    display: none;
+    margin-left: auto;
+  }
+
+  .closeToggle.show {
+    display: block;
+  }
+
+  .etg {
+    // width: 68px;
+    margin-left: 0;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 2.8rem;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100%;
+    flex-direction: column-reverse;
+    display: none;
+    justify-content: space-around;
+    border-radius: 0;
+  }
+
+  .navLinks a {
+    border-radius: 0;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.281);
+  }
+
+  .navLinks a:hover {
+    border-radius: 0;
+  }
+
+  .dropdownContent a:hover {
+    border-radius: 0;
+  }
+
+  .navLinks.show {
+    display: flex;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropbtn {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.281);
+  }
+
+  .dropdownContent {
+    width: 100%;
+    border-radius: 0;
+    background-color: rgb(42, 44, 53);
+  }
+
+  .pagination {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .paginationName {
+    display: none;
+  }
+  .pagination {
+    min-width: 0;
+  }
+}
